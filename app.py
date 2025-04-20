@@ -48,9 +48,9 @@ if uploaded_file is not None:
     # Display the uploaded image
     img = Image.open(uploaded_file)
     img_resized = img.resize((128, 128))  # Resize for display
-    st.image(img_resized, caption="Uploaded Image", use_column_width=False)
+    st.image(img_resized, caption="Uploaded Image", use_container_width=False)
 
     if st.button("Predict"):
         label, processed_img = predict_sign(uploaded_file)
         st.success(f"Predicted Sign: **{label}**")
-        st.image(processed_img.resize((128, 128)), caption="Processed Input", use_column_width=False)
+        st.image(processed_img.resize((128, 128)), caption="Processed Input", use_container_width=False)
